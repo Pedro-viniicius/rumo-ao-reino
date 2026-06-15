@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumo ao Reino | Devocional Cristão</title>
+    <meta name="description" content="Uma página devocional para recordar as promessas de Deus, a esperança da consumação do Reino e a identidade dos santos em Cristo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <i data-lucide="book-open" class="logo-icon"></i>
+                Rumo ao Reino
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#promessas">Promessas</a></li>
+                    <li><a href="#sofrimento">Consolo</a></li>
+                    <li><a href="#alegria">Alegria</a></li>
+                    <li><a href="#sabedoria">Sabedoria</a></li>
+                    <li><a href="#identidade">Identidade</a></li>
+                    <li><a href="#versiculo-hoje" class="nav-highlight">Lembrança</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-label">Uma jornada de fé</span>
+                <h1 class="hero-title">Lembre-se para onde você está indo.</h1>
+                <p class="hero-subtitle">Uma página devocional para recordar as promessas de Deus, a esperança da consumação do Reino e a identidade dos santos em Cristo.</p>
+                <div class="hero-buttons">
+                    <a href="#promessas" class="btn btn-primary">Meditar nas Promessas</a>
+                    <a href="#versiculo-hoje" class="btn btn-secondary">Versículo para Hoje</a>
+                </div>
+                <p class="hero-impact">“Somos peregrinos, mas não estamos perdidos. O Rei vem.”</p>
+            </div>
+        </section>
+
+        <!-- 2. O Reino que ainda será consumado -->
+        <section id="promessas" class="section section-light">
+            <div class="container">
+                <header class="section-header">
+                    <h2>O Reino que ainda será consumado</h2>
+                    <p class="section-desc">A Bíblia aponta para promessas ainda futuras, não como combustível para medo ou especulação, mas como fundamento sólido de esperança. A esperança cristã não termina em escapar do mundo, mas em ver Cristo restaurando todas as coisas.</p>
+                </header>
+                <div class="grid" id="grid-promessas">
+                    <!-- Gerado via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Para o vale da sombra da morte -->
+        <section id="sofrimento" class="section section-dark-accent">
+            <div class="container">
+                <header class="section-header text-center">
+                    <h2>Para o vale da sombra da morte</h2>
+                    <p class="section-desc">Textos e meditações para quem enfrenta luto, ansiedade, fraqueza ou o cansaço do peregrino. A consolação não está em negar a dor, mas na presença de Cristo dentro dela.</p>
+                </header>
+                <div class="grid" id="grid-sofrimento">
+                    <!-- Gerado via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Para dias de alegria -->
+        <section id="alegria" class="section section-light">
+            <div class="container">
+                <header class="section-header text-center">
+                    <h2>Para dias de alegria</h2>
+                    <p class="section-desc">Momentos de gratidão e celebração no Senhor. A alegria é mais santa quando volta para Deus em gratidão.</p>
+                </header>
+                <div class="grid" id="grid-alegria">
+                    <!-- Gerado via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Sabedoria para a vida passageira -->
+        <section id="sabedoria" class="section section-soft">
+            <div class="container">
+                <header class="section-header text-center">
+                    <h2>Sabedoria para a vida passageira</h2>
+                    <p class="section-desc">Reflexões práticas sobre humildade, trabalho, tempo e santidade nesta era presente.</p>
+                </header>
+                <div class="grid" id="grid-sabedoria">
+                    <!-- Gerado via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Quem você é em Cristo -->
+        <section id="identidade" class="section section-light">
+            <div class="container">
+                <header class="section-header text-center">
+                    <h2>Quem você é em Cristo</h2>
+                    <p class="section-desc">Lembretes doutrinários firmes sobre sua união com Cristo. Sua identidade não é definida pelo que você faz, mas pelo que Ele fez.</p>
+                </header>
+                <div class="grid" id="grid-identidade">
+                    <!-- Gerado via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Versículo para hoje -->
+        <section id="versiculo-hoje" class="section section-highlight">
+            <div class="container text-center">
+                <header class="section-header">
+                    <h2>Sua Lembrança Diária</h2>
+                    <p class="section-desc">Clique para receber um lembrete bíblico aleatório para fortalecer sua jornada hoje.</p>
+                </header>
+                <button id="btn-gerar-versiculo" class="btn btn-primary btn-large">Receber lembrança para hoje</button>
+                
+                <div id="versiculo-container" class="versiculo-card hidden">
+                    <span id="v-categoria" class="badge">Categoria</span>
+                    <h3 id="v-texto" class="v-texto">...</h3>
+                    <p id="v-referencia" class="v-referencia">Referência</p>
+                    <p id="v-meditacao" class="v-meditacao">Meditação</p>
+                    <div class="v-actions">
+                        <button id="btn-copiar" class="btn-icon" aria-label="Copiar" title="Copiar"><i data-lucide="copy"></i></button>
+                        <button id="btn-favoritar" class="btn-icon" aria-label="Favoritar" title="Favoritar"><i data-lucide="heart"></i></button>
+                    </div>
+                </div>
+
+                <div id="favoritos-container" class="favoritos-section">
+                    <h3>Meus Favoritos</h3>
+                    <div class="grid" id="grid-favoritos">
+                        <!-- Gerado via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Criar rotina -->
+        <section id="rotina" class="section section-dark">
+            <div class="container text-center rotina-content">
+                <h2>Crie uma Rotina Devocional</h2>
+                <p>Volte quando esquecer. Volte quando estiver cansado. Volte quando estiver alegre. Volte quando precisar lembrar que sua história termina no Reino de Deus.</p>
+                <div class="rotina-buttons">
+                    <button class="btn btn-primary" onclick="alert('Pressione Ctrl+D (ou Cmd+D) para salvar esta página nos favoritos!')">Salvar nos favoritos</button>
+                    <a href="#promessas" class="btn btn-secondary">Começar meditação</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p class="footer-phrase">“Até que Ele venha.”</p>
+            <p class="footer-desc">Uma página para peregrinos que precisam se lembrar do lar.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
