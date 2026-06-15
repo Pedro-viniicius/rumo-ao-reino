@@ -578,6 +578,15 @@ a {
 
 /* Responsivo */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    .section {
+        padding: 64px 0;
+    }
+    .section-header {
+        margin-bottom: 32px;
+    }
     .menu-toggle {
         display: block;
     }
@@ -586,8 +595,8 @@ a {
         flex-direction: column;
         position: absolute;
         top: calc(100% + 20px);
-        left: -24px;
-        right: -24px;
+        left: -20px;
+        right: -20px;
         background-color: var(--bg-main);
         padding: 24px;
         border-bottom: 1px solid var(--border-color);
@@ -597,11 +606,40 @@ a {
     .nav-links.active {
         display: flex;
     }
+    .carousel-wrapper {
+        padding: 0;
+        padding-bottom: 64px;
+    }
     .carousel-btn {
-        display: none; /* Hide arrows on mobile to force swipe */
+        display: flex;
+        top: auto;
+        bottom: 4px;
+        transform: none;
+        width: 44px;
+        height: 44px;
+    }
+    .carousel-btn:active {
+        transform: translateY(2px);
+    }
+    .carousel-btn.prev {
+        left: calc(50% - 56px);
+    }
+    .carousel-btn.next {
+        right: calc(50% - 56px);
     }
     .carousel {
-        scrollbar-width: none; /* Oculta a barra de rolagem no mobile caso queira só o swipe limpo */
+        scrollbar-width: none;
+        padding: 8px 0 16px 0;
+    }
+    .card {
+        padding: 32px 24px;
+    }
+    .card-title {
+        font-size: 1.15rem;
+    }
+    .card-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
     .hero-title {
         font-size: 2.5rem;
@@ -619,11 +657,11 @@ a {
         flex-direction: column;
     }
     .versiculo-card {
-        padding: 30px 20px;
+        padding: 32px 20px;
     }
     .v-actions {
         position: static;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 24px;
     }
 }
