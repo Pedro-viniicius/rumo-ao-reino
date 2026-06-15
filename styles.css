@@ -132,10 +132,19 @@ a {
 
 .menu-toggle {
     display: none;
-    background: none;
-    border: none;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px;
     cursor: pointer;
     color: var(--text-main);
+    box-shadow: 0 4px 0 rgba(230, 226, 216, 0.8), 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.menu-toggle:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0 rgba(230, 226, 216, 0.8), 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Buttons */
@@ -297,14 +306,36 @@ a {
 }
 .section-dark h2 { color: var(--bg-main); }
 
-/* Grid & Cards */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 32px; /* Increased gap to accommodate 3d shadows */
+/* Carousel & Cards */
+.carousel {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 16px 8px 32px 8px; /* space for shadow and scrollbar */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling for iOS */
+}
+
+/* Custom scrollbar for carousel */
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel::-webkit-scrollbar-track {
+    background: transparent;
+}
+.carousel::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-green);
 }
 
 .card {
+    min-width: 320px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
