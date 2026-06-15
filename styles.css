@@ -307,6 +307,48 @@ a {
 .section-dark h2 { color: var(--bg-main); }
 
 /* Carousel & Cards */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+}
+
+.carousel-btn:hover {
+    box-shadow: var(--shadow-md);
+    color: var(--accent-gold);
+}
+
+.carousel-btn:active {
+    transform: translateY(-48%);
+}
+
+.carousel-btn.prev {
+    left: -20px;
+}
+
+.carousel-btn.next {
+    right: -20px;
+}
+
 .carousel {
     display: flex;
     gap: 32px;
@@ -574,6 +616,12 @@ a {
     }
     .nav-links.active {
         display: flex;
+    }
+    .carousel-btn {
+        display: none; /* Hide arrows on mobile to force swipe */
+    }
+    .carousel {
+        scrollbar-width: none; /* Oculta a barra de rolagem no mobile caso queira só o swipe limpo */
     }
     .hero-title {
         font-size: 2.5rem;

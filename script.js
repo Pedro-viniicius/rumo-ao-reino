@@ -117,6 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCards('grid-sabedoria', db.sabedoria.slice(0, 6));
     renderCards('grid-identidade', db.identidade.slice(0, 6));
     
+    // Configurar setas do carrossel
+    setupCarousels();
+    
     // Atualizar ícones lucide recém criados
     lucide.createIcons();
     
@@ -141,6 +144,33 @@ document.getElementById('btn-gerar-versiculo').addEventListener('click', () => {
     // Check if is favorited
     updateFavoriteIcon();
 });
+
+// Setup setas do carrossel
+function setupCarousels() {
+    document.querySelectorAll('.carousel').forEach(container => {
+        if (container.parentElement.classList.contains('carousel-wrapper')) return;
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'carousel-wrapper';
+        
+        const btnPrev = document.createElement('button');
+        btnPrev.className = 'carousel-btn prev';
+        btnPrev.innerHTML = '<i data-lucide="chevron-left"></i>';
+        btnPrev.setAttribute('aria-label', 'Anterior');
+        btnPrev.onclick = () => container.scrollBy({ left: -352, behavior: 'smooth' });
+
+        const btnNext = document.createElement('button');
+        btnNext.className = 'carousel-btn next';
+        btnNext.innerHTML = '<i data-lucide="chevron-right"></i>';
+        btnNext.setAttribute('aria-label', 'Próximo');
+        btnNext.onclick = () => container.scrollBy({ left: 352, behavior: 'smooth' });
+
+        container.parentNode.insertBefore(wrapper, container);
+        wrapper.appendChild(btnPrev);
+        wrapper.appendChild(container);
+        wrapper.appendChild(btnNext);
+    });
+}
 
 document.getElementById('btn-copiar').addEventListener('click', () => {
     if (!versiculoAtual) return;
