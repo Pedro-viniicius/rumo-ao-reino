@@ -119,9 +119,12 @@
             <div class="container text-center">
                 <header class="section-header">
                     <h2>Sua Lembrança Diária</h2>
-                    <p class="section-desc">Clique para receber um lembrete bíblico aleatório para fortalecer sua jornada hoje.</p>
+                    <p class="section-desc">Clique para receber um lembrete bíblico aleatório para fortalecer sua jornada hoje ou salve a página para voltar amanhã.</p>
                 </header>
-                <button id="btn-gerar-versiculo" class="btn btn-primary btn-large">Receber lembrança para hoje</button>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <button id="btn-gerar-versiculo" class="btn btn-primary btn-large">Receber lembrança para hoje</button>
+                    <button id="btn-salvar-pagina" class="btn btn-secondary btn-large">Salvar nos favoritos</button>
+                </div>
                 
                 <div id="versiculo-container" class="versiculo-card hidden">
                     <span id="v-categoria" class="badge">Categoria</span>
@@ -149,8 +152,7 @@
                 <h2>Crie uma Rotina Devocional</h2>
                 <p>Volte quando esquecer. Volte quando estiver cansado. Volte quando estiver alegre. Volte quando precisar lembrar que sua história termina no Reino de Deus.</p>
                 <div class="rotina-buttons">
-                    <button class="btn btn-primary" id="btn-salvar-pagina">Salvar nos favoritos</button>
-                    <a href="#promessas" class="btn btn-secondary">Começar meditação</a>
+                    <a href="#promessas" class="btn btn-primary">Começar meditação</a>
                 </div>
             </div>
         </section>
