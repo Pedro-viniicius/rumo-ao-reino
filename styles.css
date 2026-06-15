@@ -500,6 +500,29 @@ a {
     right: 16px;
 }
 
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-dark-accent);
+    color: var(--text-on-dark);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-md);
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
     .menu-toggle {

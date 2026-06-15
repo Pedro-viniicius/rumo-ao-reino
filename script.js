@@ -146,7 +146,11 @@ document.getElementById('btn-copiar').addEventListener('click', () => {
     if (!versiculoAtual) return;
     const textToCopy = `"${versiculoAtual.texto}"\n— ${versiculoAtual.ref}\n\nMeditação: ${versiculoAtual.meditacao}\n\nVia: Rumo ao Reino`;
     navigator.clipboard.writeText(textToCopy).then(() => {
-        alert('Copiado para a área de transferência!');
+        const toast = document.getElementById('toast');
+        if (toast) {
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
     });
 });
 
@@ -179,8 +183,10 @@ function updateFavoriteIcon() {
     if (!versiculoAtual) return;
     const favs = getFavorites();
     const btn = document.getElementById('btn-favoritar');
-    const icon = btn.querySelector('i');
+    const icon = btn.querySelector('svg'); // Lucide converte o <i> em <svg>
     
+    if (!icon) return;
+
     if (favs.some(f => f.ref === versiculoAtual.ref)) {
         icon.setAttribute('fill', 'var(--detail-terra)');
         icon.style.color = 'var(--detail-terra)';
