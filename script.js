@@ -227,3 +227,44 @@ window.removeFavorite = function(ref) {
         updateFavoriteIcon();
     }
 }
+
+// Lógica do Menu Mobile
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
+// Lógica do Modal de Favoritos
+const btnSalvarPagina = document.getElementById('btn-salvar-pagina');
+const modalFavoritos = document.getElementById('modal-favoritos');
+const btnFecharModal = document.getElementById('btn-fechar-modal');
+const btnEntendiModal = document.getElementById('btn-entendi-modal');
+
+if (btnSalvarPagina && modalFavoritos) {
+    btnSalvarPagina.addEventListener('click', () => {
+        modalFavoritos.classList.remove('hidden');
+    });
+
+    const fecharModal = () => {
+        modalFavoritos.classList.add('hidden');
+    };
+
+    if (btnFecharModal) btnFecharModal.addEventListener('click', fecharModal);
+    if (btnEntendiModal) btnEntendiModal.addEventListener('click', fecharModal);
+
+    modalFavoritos.addEventListener('click', (e) => {
+        if (e.target === modalFavoritos) fecharModal();
+    });
+}
+

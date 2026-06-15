@@ -83,6 +83,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -127,6 +128,14 @@ a {
 
 .nav-highlight:hover {
     background-color: var(--border-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-main);
 }
 
 /* Buttons */
@@ -453,10 +462,64 @@ a {
     font-size: 0.95rem;
 }
 
+/* Modal Favoritos */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: visible;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-content {
+    background: var(--bg-main);
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    padding: 40px 32px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
     .nav-links {
-        display: none; /* Em uma versão completa, isso seria um menu sanduíche */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 20px);
+        left: -24px;
+        right: -24px;
+        background-color: var(--bg-main);
+        padding: 24px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-md);
+        gap: 16px;
+    }
+    .nav-links.active {
+        display: flex;
     }
     .hero-title {
         font-size: 2.5rem;

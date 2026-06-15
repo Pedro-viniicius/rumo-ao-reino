@@ -19,7 +19,10 @@
                 Rumo ao Reino
             </a>
             <nav class="main-nav">
-                <ul class="nav-links">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
+                    <i data-lucide="menu"></i>
+                </button>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#promessas">Promessas</a></li>
                     <li><a href="#sofrimento">Consolo</a></li>
                     <li><a href="#alegria">Alegria</a></li>
@@ -146,7 +149,7 @@
                 <h2>Crie uma Rotina Devocional</h2>
                 <p>Volte quando esquecer. Volte quando estiver cansado. Volte quando estiver alegre. Volte quando precisar lembrar que sua história termina no Reino de Deus.</p>
                 <div class="rotina-buttons">
-                    <button class="btn btn-primary" onclick="alert('Pressione Ctrl+D (ou Cmd+D) para salvar esta página nos favoritos!')">Salvar nos favoritos</button>
+                    <button class="btn btn-primary" id="btn-salvar-pagina">Salvar nos favoritos</button>
                     <a href="#promessas" class="btn btn-secondary">Começar meditação</a>
                 </div>
             </div>
@@ -159,6 +162,20 @@
             <p class="footer-desc">Uma página para peregrinos que precisam se lembrar do lar.</p>
         </div>
     </footer>
+
+    <!-- Modal Favoritos -->
+    <div id="modal-favoritos" class="modal-overlay hidden">
+        <div class="modal-content card">
+            <button id="btn-fechar-modal" class="btn-icon modal-close" aria-label="Fechar"><i data-lucide="x"></i></button>
+            <h3 class="card-title">Salvar Página</h3>
+            <p class="card-text" style="margin-bottom: 16px;">Para favoritar esta página e voltar todos os dias:</p>
+            <ul style="text-align: left; margin-bottom: 24px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; padding-left: 20px;">
+                <li style="margin-bottom: 12px;"><strong>No Celular (Chrome/Safari):</strong> Toque no ícone de opções (três pontinhos ou botão de compartilhar) e escolha "Adicionar à Tela Inicial" ou "Adicionar aos Favoritos".</li>
+                <li><strong>No Computador:</strong> Pressione <strong>Ctrl + D</strong> (ou <strong>Cmd + D</strong> no Mac).</li>
+            </ul>
+            <button id="btn-entendi-modal" class="btn btn-primary">Entendi!</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>
