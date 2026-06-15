@@ -157,13 +157,13 @@ function setupCarousels() {
         btnPrev.className = 'carousel-btn prev';
         btnPrev.innerHTML = '<i data-lucide="chevron-left"></i>';
         btnPrev.setAttribute('aria-label', 'Anterior');
-        btnPrev.onclick = () => container.scrollBy({ left: -352, behavior: 'smooth' });
+        btnPrev.onclick = () => container.scrollBy({ left: -container.offsetWidth, behavior: 'smooth' });
 
         const btnNext = document.createElement('button');
         btnNext.className = 'carousel-btn next';
         btnNext.innerHTML = '<i data-lucide="chevron-right"></i>';
         btnNext.setAttribute('aria-label', 'Próximo');
-        btnNext.onclick = () => container.scrollBy({ left: 352, behavior: 'smooth' });
+        btnNext.onclick = () => container.scrollBy({ left: container.offsetWidth, behavior: 'smooth' });
 
         container.parentNode.insertBefore(wrapper, container);
         wrapper.appendChild(btnPrev);

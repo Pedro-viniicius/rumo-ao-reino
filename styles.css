@@ -257,13 +257,9 @@ a {
 }
 
 .section-header {
-    margin-bottom: 48px;
+    margin: 0 auto 48px auto;
     max-width: 700px;
-}
-
-.section-header.text-center {
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
 }
 
 .section-header h2 {
@@ -309,8 +305,9 @@ a {
 /* Carousel & Cards */
 .carousel-wrapper {
     position: relative;
-    display: flex;
-    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 56px; /* Space for arrows */
 }
 
 .carousel-btn {
@@ -320,8 +317,8 @@ a {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -338,55 +335,37 @@ a {
 }
 
 .carousel-btn:active {
-    transform: translateY(-48%);
+    transform: translateY(calc(-50% + 2px));
 }
 
 .carousel-btn.prev {
-    left: -20px;
+    left: 0;
 }
 
 .carousel-btn.next {
-    right: -20px;
+    right: 0;
 }
 
 .carousel {
     display: flex;
-    gap: 32px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 16px 8px 32px 8px; /* space for shadow and scrollbar */
+    overflow: hidden; /* Only arrows navigate */
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling for iOS */
-}
-
-/* Custom scrollbar for carousel */
-.carousel::-webkit-scrollbar {
-    height: 8px;
-}
-.carousel::-webkit-scrollbar-track {
-    background: transparent;
-}
-.carousel::-webkit-scrollbar-thumb {
-    background-color: var(--border-color);
-    border-radius: 4px;
-}
-.carousel::-webkit-scrollbar-thumb:hover {
-    background-color: var(--secondary-green);
+    width: 100%;
+    padding: 16px 0 32px 0; /* Space for box-shadow on cards */
 }
 
 .card {
-    min-width: 320px;
-    scroll-snap-align: center;
-    flex-shrink: 0;
+    flex: 0 0 100%;
+    width: 100%;
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 32px;
+    padding: 40px 32px; /* Increased padding for better breathing room */
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
     box-shadow: var(--shadow-3d);
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px; /* space for the shadow */
+    text-align: left;
 }
 
 .card:hover {
